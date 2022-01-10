@@ -1,0 +1,26 @@
+link - https://codeforces.com/problemset/problem/478/B
+
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define mp make_pair
+typedef long long int ll;
+
+int main()
+{
+	ios::sync_with_stdio(false), cin.tie(0);
+	long long int n, m;
+	cin >> n >> m;
+	long long int max = 0, min = 0;
+	max = (n - m + 1) * (n - m) / 2;
+
+	long long int num1, num2;
+	num1 = n / m;
+	num2 = n % m; //num2 is the number of groups that need to be added by one
+ 
+	min += num1 * (num1 - 1) / 2 * (m - num2) ;
+	min += (num1 + 1) * (num1) / 2 * num2;
+	
+  cout << min << ' ' << max << endl;
+	return 0;
+}
