@@ -1,0 +1,30 @@
+link - https://codeforces.com/problemset/problem/467/B 
+
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define mp make_pair
+typedef long long int ll;
+
+int main()
+{
+	ios_base::sync_with_stdio(false); cin.tie(NULL);
+	int n, m, k;
+	cin >> n >> m >> k;
+
+	int arr[m + 1] = {0};
+	for (int i = 0; i < m + 1; ++i)
+	{
+		cin >> arr[i];
+		//cout << "\n";
+	}
+	int count = 0;
+	for (int i = m - 1; i >= 0; i--)
+	{	int x = arr[m] ^ arr[i];
+		if ((__builtin_popcount(x)) <= k)
+		{
+			count++;
+		}
+	}
+	cout << count;
+}
