@@ -1,0 +1,36 @@
+link - https://codeforces.com/problemset/problem/499/B
+
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define mp make_pair
+typedef long long int ll;
+
+int main()
+{
+	ios_base::sync_with_stdio(false); cin.tie(NULL);
+	int m, n;
+	cin >> n >> m;
+	unordered_map<string, string>mp;
+	for (int i = 0; i < m; i++)
+	{
+		string a, b;
+		cin >> a >> b;
+		string mn;
+		if (a.size() <= b.size())
+			mn = a;
+		else
+			mn = b;
+		mp.insert({a, mn});
+		mp.insert({b, mn});
+	}
+	string res = "";
+	for (int i = 0; i < n; i++)
+	{
+		string s;
+		cin >> s;
+		res += mp[s];
+		res += " ";
+	}
+	cout << res;
+}
