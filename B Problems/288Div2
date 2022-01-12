@@ -1,0 +1,37 @@
+link - https://codeforces.com/problemset/problem/508/B
+
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define mp make_pair
+typedef long long int ll;
+ 
+int main()
+{
+	ios_base::sync_with_stdio(false); cin.tie(NULL);
+	string s;
+	cin >> s;
+	int ind = 0,n = s.size();
+	int x = s[n - 1] - 0;
+	for (int i = 0; i < n); i++)
+	{
+		if ((s[i] - 0) % 2 == 0)
+		{
+			if (x > s[i] - 0) {
+				swap(s[n - 1], s[i]);
+				cout << s;
+				return 0;
+			}
+			else {
+				ind = i;
+			}
+		}
+	}
+	if (ind == -1)
+		cout << -1;
+	else
+	{
+		swap(s[ind], s[n - 1]);
+		cout << s;
+	}
+}
