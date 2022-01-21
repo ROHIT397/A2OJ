@@ -1,0 +1,15 @@
+    #include<bits/stdc++.h>
+    using namespace std;
+    #define pb push_back
+    #define mp make_pair
+    typedef long long int ll;
+    int l = 1e9+7;
+    int main()
+    {
+      ios_base::sync_with_stdio(false); cin.tie(NULL);
+      long long int a, b, n;
+      cin >> a >> b >> n;
+      long long int arr[] = {a, b, b - a, -a, -b, a - b};
+      cout << (arr[(t - 1) % 6] % l + l) % l;
+      return 0;
+    }
